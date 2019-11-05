@@ -54,7 +54,7 @@ The module has the following output values:
 `hcltemplate` like this:
 
 ```
-$ terraform-config-inspect --json modules/network | hcltemplate terraform-example.tmpl 
+$ terraform-config-inspect --json modules/network | hcltemplate terraform.tmpl 
 The module has the following input variables:
 - environment (string)
 
