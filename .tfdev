@@ -1,0 +1,8 @@
+version_info {
+  commit_var  =    "main.GitCommit"
+  version_var =    "main.Version"
+  prerelease_var = "main.Prerelease"
+}
+
+version_exec = false
+disable_provider_requirements = true
