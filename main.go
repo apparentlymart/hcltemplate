@@ -9,6 +9,8 @@ import (
 	"os"
 
 	"github.com/hashicorp/hcl/v2"
+	"github.com/hashicorp/hcl/v2/ext/tryfunc"
+	"github.com/hashicorp/hcl/v2/ext/typeexpr"
 	"github.com/hashicorp/hcl/v2/hclsyntax"
 	flag "github.com/spf13/pflag"
 	"github.com/zclconf/go-cty/cty"
@@ -167,9 +169,11 @@ func usage() {
 func functions() map[string]function.Function {
 	return map[string]function.Function{
 		"abs":        stdlib.AbsoluteFunc,
+		"can":        tryfunc.CanFunc,
 		"csvdecode":  stdlib.CSVDecodeFunc,
 		"coalesce":   stdlib.CoalesceFunc,
 		"concat":     stdlib.ConcatFunc,
+		"convert":    typeexpr.ConvertFunc,
 		"format":     stdlib.FormatFunc,
 		"formatdate": stdlib.FormatDateFunc,
 		"int":        stdlib.IntFunc,
@@ -185,6 +189,7 @@ func functions() map[string]function.Function {
 		"reverse":    stdlib.ReverseFunc,
 		"strlen":     stdlib.StrlenFunc,
 		"substr":     stdlib.SubstrFunc,
+		"try":        tryfunc.TryFunc,
 		"upper":      stdlib.UpperFunc,
 	}
 }
